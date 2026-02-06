@@ -1,0 +1,60 @@
+body{margin:0;font-family:Pretendard,sans-serif;background:#f6f8fc}
+.top{display:flex;justify-content:space-between;padding:16px}
+.brand h1{font-size:30px;font-weight:900}
+.sub{font-weight:800;color:#555}
+select{padding:8px 12px;font-size:16px;font-weight:800}
+
+.hero{margin:16px;padding:16px;background:#eef2ff;border-radius:14px}
+.hero-title{font-size:22px;font-weight:900}
+.hero-desc{font-size:16px;font-weight:700;margin-top:8px}
+.legend{margin-top:8px;font-weight:800}
+.y2024{color:#1d4ed8}
+.y2025{color:#16a34a}
+.y2026{color:#dc2626}
+
+#rails{padding:16px}
+
+.rail{
+  background:white;
+  border-radius:16px;
+  margin-bottom:24px;
+  padding:16px;
+}
+
+.rail-title{
+  font-size:20px;
+  font-weight:900;
+  margin-bottom:10px;
+}
+
+.track{
+  position:relative;
+  height:140px;
+  background:linear-gradient(90deg,#f1f5ff,#f8fafc);
+  border-radius:12px;
+  overflow-x:auto;
+}
+
+.axis{
+  position:absolute;
+  top:0;bottom:0;
+  width:1px;
+  background:rgba(0,0,0,0.08);
+}
+
+.point{
+  position:absolute;
+  transform:translateX(-50%);
+  font-size:13px;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+.dot{
+  width:12px;height:12px;border-radius:50%;
+  margin:0 auto 4px;
+}
+
+.y2024 .dot{background:#1d4ed8}
+.y2025 .dot{background:#16a34a}
+.y2026 .dot{background:#dc2626}
