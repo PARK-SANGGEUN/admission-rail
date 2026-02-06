@@ -1,0 +1,174 @@
+/* Bright, clean, high-contrast, 'rail' feel */
+:root{
+  --bg:#f6f8fc;
+  --card:#ffffff;
+  --ink:#0b1220;
+  --muted:#566075;
+  --line:rgba(15,23,42,.12);
+  --shadow:0 14px 34px rgba(15,23,42,.12);
+  --r:18px;
+  --rail:#f4f7ff;
+  --lane:#e8eefc;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Pretendard, system-ui, -apple-system, Segoe UI, Roboto, 'Noto Sans KR', sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+}
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  padding:22px 22px 10px;
+  gap:16px;
+}
+.brand .title{
+  font-size:36px;
+  font-weight:950;
+  letter-spacing:-0.02em;
+}
+.brand .sub{
+  margin-top:6px;
+  font-size:16px;
+  font-weight:900;
+  color:var(--muted);
+}
+.controls{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end}
+.ctl{display:flex;flex-direction:column;gap:8px}
+.ctl span{font-size:14px;font-weight:950;color:var(--muted)}
+select{
+  padding:10px 12px;
+  font-size:16px;
+  font-weight:950;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:#fff;
+}
+
+.hero{
+  margin:10px 22px 18px;
+  padding:18px 18px;
+  border-radius:var(--r);
+  background:linear-gradient(120deg,#eef2ff,#f8fafc);
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+}
+.heroTitle{font-size:24px;font-weight:950}
+.heroDesc{margin-top:10px;font-size:17px;font-weight:900;color:#1f2a44;line-height:1.45}
+.legend{margin-top:10px;font-size:17px;font-weight:950;display:flex;gap:14px;flex-wrap:wrap}
+.y2024{color:#1d4ed8}
+.y2025{color:#16a34a}
+.y2026{color:#dc2626}
+
+main{padding:0 22px 30px;display:flex;flex-direction:column;gap:18px}
+
+/* Track card */
+.railCard{
+  background:var(--card);
+  border-radius:var(--r);
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+  padding:16px 16px 14px;
+  position:relative;
+  overflow:hidden;
+}
+.railAccent{
+  position:absolute;left:0;top:0;bottom:0;width:10px;
+  background:var(--accent,#c7d2fe);
+}
+.railHeader{
+  display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;
+  margin-left:6px;
+  margin-bottom:10px;
+}
+.railTitle{
+  font-size:22px;
+  font-weight:950;
+}
+.railMeta{
+  font-size:14px;
+  font-weight:950;
+  color:var(--muted);
+}
+.railViewport{
+  border-radius:16px;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,var(--rail),#ffffff);
+  overflow-x:auto;
+  overflow-y:hidden;
+  -webkit-overflow-scrolling:touch;
+}
+svg{display:block;min-width:1400px}
+
+/* Axis & labels: bigger + bolder */
+.tickText{
+  font-size:16px;
+  font-weight:950;
+  fill:rgba(0,0,0,.72);
+}
+.axisLine{stroke:rgba(0,0,0,.09);stroke-width:1}
+.laneLine{stroke:rgba(0,0,0,.10);stroke-width:2}
+.yearText{
+  font-size:22px;
+  font-weight:950;
+}
+.dot{stroke:rgba(255,255,255,.95);stroke-width:2}
+.label{
+  font-size:14px;
+  font-weight:950;
+  fill:#0b1220;
+  paint-order: stroke;
+  stroke: rgba(255,255,255,.95);
+  stroke-width: 5px;
+  stroke-linejoin: round;
+  pointer-events:none;
+}
+
+.statsRow{
+  margin-top:12px;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+}
+.stat{
+  background:#f8fafc;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:12px 12px;
+}
+.stat .k{font-size:12px;font-weight:950;color:var(--muted)}
+.stat .v{margin-top:4px;font-size:22px;font-weight:950}
+.footer{
+  padding:14px 22px 26px;
+  font-size:14px;
+  font-weight:950;
+  color:var(--muted);
+  text-align:right;
+}
+
+/* Tooltip */
+.tooltip{
+  position:fixed;
+  z-index:9999;
+  background:rgba(15,23,42,.92);
+  color:#fff;
+  padding:10px 12px;
+  border-radius:12px;
+  font-size:14px;
+  font-weight:950;
+  box-shadow:0 16px 40px rgba(0,0,0,.25);
+  max-width:min(380px, 86vw);
+  display:none;
+  line-height:1.35;
+}
+.tooltip .t{opacity:.85;font-weight:850;margin-top:4px;font-size:13px}
+
+@media (max-width: 900px){
+  .brand .title{font-size:30px}
+  .heroTitle{font-size:20px}
+  .heroDesc{font-size:15px}
+  .statsRow{grid-template-columns:repeat(2,minmax(0,1fr))}
+  svg{min-width:1200px}
+}
